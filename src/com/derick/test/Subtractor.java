@@ -9,7 +9,8 @@ package com.derick.test;
  *
  * @author derickfelix
  */
-public interface Adder {
+public interface Subtractor {
+ 
+    long subtract(long... operands);
     
-    long add(long... operands);
 }
