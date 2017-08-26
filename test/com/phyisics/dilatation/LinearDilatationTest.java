@@ -86,7 +86,7 @@ public class LinearDilatationTest {
         double alpha = 60E-5;
         LinearDilatation instance = new LinearDilatation();
         double expResult = 200;
-        double result = instance.deltaT(initialL, finalL, alpha);
+        double result = instance.deltaTL(initialL, finalL, alpha);
         assertEquals(expResult, result, 0.0);
         
     }

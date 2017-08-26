@@ -19,7 +19,7 @@ public class LinearDilatation {
      * @param deltaT - is the temperature ΔT
      * @return alpha - is the coefficient α
      */
-    public double alpha(double initialL, double finalL, double deltaT) {
+    protected double alpha(double initialL, double finalL, double deltaT) {
         double alpha = (finalL - initialL)/(initialL * deltaT);
         
         String format = String.format("%.7f", alpha);
@@ -34,7 +34,7 @@ public class LinearDilatation {
      * @param alpha - is the coefficient α
      * @return deltaL - is the the length - ΔL 
      */
-    public double deltaL(double initialL, double deltaT, double alpha) {
+    protected double deltaL(double initialL, double deltaT, double alpha) {
         double deltaL = initialL * alpha * deltaT;
         
         //String format = String.format("%.7f", finalL);
@@ -48,7 +48,7 @@ public class LinearDilatation {
      * @param alpha - is the coefficient α
      * @return deltaT - is the temperature ΔT  
      */
-    public double deltaT(double initialL, double finalL, double alpha) {
+    protected double deltaTL(double initialL, double finalL, double alpha) {
         
         double deltaT = (finalL - initialL) / (initialL * alpha);
         String format = String.format("%.1f", deltaT);
@@ -63,7 +63,7 @@ public class LinearDilatation {
      * @param deltaL - is the the length - ΔL 
      * @return initialL - is the the length - L0
      */
-    public double initialL(double finalL, double deltaL) {
+    protected double initialL(double finalL, double deltaL) {
         return finalL - deltaL;
     }
     /**
@@ -72,7 +72,7 @@ public class LinearDilatation {
      * @param deltaL - is the the length - ΔL 
      * @return initialL - is the the length - L1
      */
-    public double finalL(double initialL, double deltaL) {
+    protected double finalL(double initialL, double deltaL) {
         return initialL + deltaL;
     }
     
