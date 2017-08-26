@@ -60,20 +60,20 @@ public class SuperficialDilatationTest {
     @Test
     public void testDeltaS() {
         System.out.println("finalS");
-        double initialS = 4;
-        double deltaT = 40;
-        double beta = 1.7E-5;
+        double initialS = 200;
+        double deltaT = 100;
+        double beta = 2E-5;
         SuperficialDilatation instance = new SuperficialDilatation();
-        double expResult = 0.00272;
+        double expResult = 0.8;
         double result = instance.deltaS(initialS, deltaT, beta);
         assertEquals(expResult, result, 0.0);
         
         
         
-        result = instance.initialS(4.00272, 0.00272);
-        assertEquals(4, result, 0.0);
-        result = instance.finalS(4.0, 0.00272);
-        assertEquals(4.00272, result, 0.0);
+        result = instance.initialS(200.8, 0.8);
+        assertEquals(200, result, 0.0);
+        result = instance.finalS(200, 0.8);
+        assertEquals(200.8, result, 0.0);
     }
     
     /**
@@ -82,11 +82,11 @@ public class SuperficialDilatationTest {
     @Test
     public void testDeltaT() {
         System.out.println("deltaS");
-        double initialS = 2.0;
-        double finalS = 2.24;
-        double beta = 60E-5;
+        double initialS = 200;
+        double finalS = 200.8;
+        double beta = 2E-5;
         SuperficialDilatation instance = new SuperficialDilatation();
-        double expResult = 200;
+        double expResult = 100;
         double result = instance.deltaTS(initialS, finalS, beta);
         assertEquals(expResult, result, 0.0);
         

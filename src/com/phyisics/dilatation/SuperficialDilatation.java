@@ -22,8 +22,7 @@ public class SuperficialDilatation extends LinearDilatation {
      * @return alpha - is the coefficient α
      */
     public double beta(double initialS, double finalS, double deltaT) {
-        //return alpha(initialS, finalS, deltaT) / dimension;
-        return 0;
+        return alpha(initialS, finalS, deltaT) / dimension;
     }
     
     /**
@@ -35,7 +34,7 @@ public class SuperficialDilatation extends LinearDilatation {
      */
     public double deltaS(double initialS, double deltaT, double beta) {
         
-        return 0;
+        return deltaL(initialS, deltaT, beta)*dimension;
     }
     
     
@@ -48,7 +47,7 @@ public class SuperficialDilatation extends LinearDilatation {
      */
     public double deltaTS(double initialS, double finalS, double beta) {
         
-        return 0;
+        return deltaTL(initialS, finalS, beta) / dimension;
     }
     
     /**
@@ -59,7 +58,7 @@ public class SuperficialDilatation extends LinearDilatation {
      */
     public double initialS(double finalS, double deltaS) {
         
-        return 0;
+        return initialL(finalS, deltaS);
     }
     
     /**
@@ -70,7 +69,7 @@ public class SuperficialDilatation extends LinearDilatation {
      */
     public double finalS(double initialS, double deltaS) {
         
-        return 0;
+        return finalL(initialS, deltaS);
     }
     
 }
