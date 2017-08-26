@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author derickfelix
  */
 public class SuperficialDilatationTest {
-    
+
     public SuperficialDilatationTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -48,12 +48,12 @@ public class SuperficialDilatationTest {
         double deltaT = 100;
         SuperficialDilatation instance = new SuperficialDilatation();
         double expResult = 2E-5;
-        
+
         double result = instance.beta(initialS, finalS, deltaT);
         assertEquals(expResult, result, 0.0);
-        
+
     }
-    
+
     /**
      * Test of deltaS method, of class SuperficialDilatation.
      */
@@ -67,15 +67,13 @@ public class SuperficialDilatationTest {
         double expResult = 0.8;
         double result = instance.deltaS(initialS, deltaT, beta);
         assertEquals(expResult, result, 0.0);
-        
-        
-        
+
         result = instance.initialS(200.8, 0.8);
         assertEquals(200, result, 0.0);
         result = instance.finalS(200, 0.8);
         assertEquals(200.8, result, 0.0);
     }
-    
+
     /**
      * Test of deltaT method, of class SuperficialDilatation.
      */
@@ -89,7 +87,7 @@ public class SuperficialDilatationTest {
         double expResult = 100;
         double result = instance.deltaTS(initialS, finalS, beta);
         assertEquals(expResult, result, 0.0);
-        
+
     }
-    
+
 }
