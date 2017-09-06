@@ -9,13 +9,13 @@ package com.derick.test;
  *
  * @author derickfelix
  */
-public class Matherator implements Adder, Subtractor {
+public class Matherator implements Adder, Subtractor, Operator {
 
     @Override
     public long add(long... operands) {
         long ret = operands[0];
-        
-        for(int i = 1; i < operands.length; i++) {
+
+        for (int i = 1; i < operands.length; i++) {
             ret += operands[i];
         }
         return ret;
@@ -23,12 +23,29 @@ public class Matherator implements Adder, Subtractor {
 
     @Override
     public long subtract(long... operands) {
-         long ret = operands[0];
-        
-        for(int i = 1; i < operands.length; i++) {
+        long ret = operands[0];
+
+        for (int i = 1; i < operands.length; i++) {
             ret -= operands[i];
         }
-        return ret;  
+        return ret;
     }
-    
+
+    @Override
+    public String operate(char[] operands, double... numbers) {
+        double n = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if(operands[i-1] == '-'){
+                n -= numbers[i];
+            }
+            if(operands[i-1] == '+') {
+                n += numbers[i];
+            }
+            if(operands[i-1] == '*') {
+                n *= numbers[i];
+            }
+        }
+        return Double.toString(n);
+    }
+
 }

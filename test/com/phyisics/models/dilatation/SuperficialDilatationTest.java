@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.phyisics.dilatation;
+package com.phyisics.models.dilatation;
 
+import com.phyisics.models.dilatation.Superficial;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -46,7 +47,7 @@ public class SuperficialDilatationTest {
         double initialS = 200;
         double finalS = 200.8;
         double deltaT = 100;
-        SuperficialDilatation instance = new SuperficialDilatation();
+        Superficial instance = new Superficial();
         double expResult = 2E-5;
 
         double result = instance.beta(initialS, finalS, deltaT);
@@ -63,7 +64,7 @@ public class SuperficialDilatationTest {
         double initialS = 200;
         double deltaT = 100;
         double beta = 2E-5;
-        SuperficialDilatation instance = new SuperficialDilatation();
+        Superficial instance = new Superficial();
         double expResult = 0.8;
         double result = instance.deltaS(initialS, deltaT, beta);
         assertEquals(expResult, result, 0.0);
@@ -83,7 +84,7 @@ public class SuperficialDilatationTest {
         double initialS = 200;
         double finalS = 200.8;
         double beta = 2E-5;
-        SuperficialDilatation instance = new SuperficialDilatation();
+        Superficial instance = new Superficial();
         double expResult = 100;
         double result = instance.deltaTS(initialS, finalS, beta);
         assertEquals(expResult, result, 0.0);

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.phyisics.dilatation;
+package com.phyisics.models.dilatation;
 
+import com.phyisics.models.dilatation.Volumetric;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -46,7 +47,7 @@ public class VolumetricDilatationTest {
         double initialV = 78.5;
         double finalV = 79.2;
         double deltaT = 20;
-        VolumetricDilatation instance = new VolumetricDilatation();
+        Volumetric instance = new Volumetric();
         double expResult = 1.5E-4;
         double result = instance.gamma(initialV, finalV, deltaT);
         assertEquals(expResult, result, 0.0);
@@ -61,7 +62,7 @@ public class VolumetricDilatationTest {
         double initialV = 78.5;
         double deltaT = 20;
         double gamma = 1.5E-4;
-        VolumetricDilatation instance = new VolumetricDilatation();
+        Volumetric instance = new Volumetric();
         double expResult = 79.2;
         double result = instance.deltaV(initialV, deltaT, gamma);
         assertEquals(expResult, result, 0.0);
@@ -76,7 +77,7 @@ public class VolumetricDilatationTest {
         double initialV = 78.5;
         double finalV = 79.2;
         double gamma = 1.5E-4;
-        VolumetricDilatation instance = new VolumetricDilatation();
+        Volumetric instance = new Volumetric();
         double expResult = 0.0;
         double result = instance.deltaTV(initialV, finalV, gamma);
         assertEquals(expResult, result, 0.0);
@@ -90,7 +91,7 @@ public class VolumetricDilatationTest {
         System.out.println("initialV");
         double finalV = 79.2;
         double deltaV = 34.3;
-        VolumetricDilatation instance = new VolumetricDilatation();
+        Volumetric instance = new Volumetric();
         double expResult = 3.5;
         double result = instance.initialV(finalV, deltaV);
         assertEquals(expResult, result, 0.0);
@@ -104,7 +105,7 @@ public class VolumetricDilatationTest {
         System.out.println("finalV");
         double initialV = 34.343;
         double deltaV = 30.3;
-        VolumetricDilatation instance = new VolumetricDilatation();
+        Volumetric instance = new Volumetric();
         double expResult = 53.5;
         double result = instance.finalV(initialV, deltaV);
         assertEquals(expResult, result, 0.0);

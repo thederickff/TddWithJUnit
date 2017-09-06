@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.phyisics.dilatation;
+package com.phyisics.models.dilatation;
 
 /**
  *
  * @author derickfelix
  */
-public class VolumetricDilatation extends LinearDilatation {
+public class Volumetric extends Linear {
 
     private final int dimension = 3;
 
@@ -22,7 +22,7 @@ public class VolumetricDilatation extends LinearDilatation {
      * @return gamma - is the coefficient 3α
      */
     public double gamma(double initialV, double finalV, double deltaT) {
-        return format5(alpha(initialV, finalV, deltaT) / dimension);
+        return formatNumber(alpha(initialV, finalV, deltaT) / dimension, 5);
     }
 
     /**
@@ -69,9 +69,5 @@ public class VolumetricDilatation extends LinearDilatation {
      */
     public double finalV(double initialV, double deltaV) {
         return finalL(initialV, deltaV);
-    }
-
-    private double format5(double number) {
-        return Double.parseDouble(String.format("%.5f", number));
     }
 }

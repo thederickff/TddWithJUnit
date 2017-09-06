@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.phyisics.dilatation;
+package com.phyisics.models.dilatation;
 
 /**
  *
  * @author derickfelix
  */
-public class LinearDilatation {
+public class Linear {
 
     /**
      * α = ΔL/LiΔT
@@ -21,10 +21,7 @@ public class LinearDilatation {
      */
     protected double alpha(double initialL, double finalL, double deltaT) {
         double alpha = (finalL - initialL) / (initialL * deltaT);
-
-        String format = String.format("%.7f", alpha);
-        alpha = Double.parseDouble(format);
-        return alpha;
+        return formatNumber(alpha, 7);
     }
 
     /**
@@ -37,9 +34,6 @@ public class LinearDilatation {
      */
     protected double deltaL(double initialL, double deltaT, double alpha) {
         double deltaL = initialL * alpha * deltaT;
-
-        //String format = String.format("%.7f", finalL);
-        //finalL = Double.parseDouble(format);
         return deltaL;
     }
 
@@ -52,14 +46,10 @@ public class LinearDilatation {
      * @return deltaT - is the temperature ΔT
      */
     protected double deltaTL(double initialL, double finalL, double alpha) {
-
         double deltaT = (finalL - initialL) / (initialL * alpha);
-        String format = String.format("%.1f", deltaT);
-
-        deltaT = Double.parseDouble(format);
-        return deltaT;
+        return formatNumber(deltaT, 1);
     }
-
+ 
     /**
      * L0 = L1 - ΔL
      *
@@ -80,6 +70,17 @@ public class LinearDilatation {
      */
     protected double finalL(double initialL, double deltaL) {
         return initialL + deltaL;
+    }
+
+    /**
+     * Format the result by informing the number and  the e.
+     * For example: 
+     * @param number 3.34673235322
+     * @param e 5
+     * @return 3.4674 as result
+     */   
+    protected double formatNumber(double number, int e) {
+        return Double.parseDouble(String.format("%." + e + "f", number));
     }
 
 }

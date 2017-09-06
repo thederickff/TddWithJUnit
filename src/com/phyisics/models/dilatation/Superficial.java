@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.phyisics.dilatation;
+package com.phyisics.models.dilatation;
 
 /**
  *
  * @author derickfelix
  */
-public class SuperficialDilatation extends LinearDilatation {
+public class Superficial extends Linear {
     
     private final int dimension = 2;
 
